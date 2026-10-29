@@ -1,7 +1,7 @@
 import { parseHomeResponse, parseSiteLocale } from "./schemas.ts";
 import type { CmsAdapter, CmsClient } from "./types.ts";
 
-const SITE_ID = "demo-b2b";
+export const CMS_SITE_ID = "demo-b2b";
 const HOME_CONTENT_TYPE = "b2b-home";
 
 export function createCmsAdapter(client: CmsClient): CmsAdapter {
@@ -16,8 +16,8 @@ export function createCmsAdapter(client: CmsClient): CmsAdapter {
         : { status: "found", locale, content };
     },
     async getSiteLocales() {
-      const records = await client.getSiteLocales(SITE_ID);
-      return records.map((record) => parseSiteLocale(record, SITE_ID));
+      const records = await client.getSiteLocales(CMS_SITE_ID);
+      return records.map((record) => parseSiteLocale(record, CMS_SITE_ID));
     },
   };
 }

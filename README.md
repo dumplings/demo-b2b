@@ -44,3 +44,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## CMS language pages (B-03-03)
+
+Static generation now reads the CMS language manifest and localized home content. Provide private CMS_URL and CMS_READ_API_TOKEN through the build environment; Strapi must be online during generation. Generated pages work offline from the CMS. The pages use minimal semantic HTML, with no production UI or translation fallback.
+
+See [CMS data layer](docs/cms-data-layer.md) and [language manifest and SSG](docs/language-manifest.md) for interfaces, validation, base handling and tests.
