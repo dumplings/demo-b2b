@@ -87,6 +87,11 @@ export function createTranslationReport(
 ): TranslationReport {
   requireEnglishBaseline({ status: "found", locale: "en", content: english });
   const names: HomeField[] = ["headline", "description"];
+  if (
+    english.bodyMarkdown !== undefined ||
+    homes.some((home) => home.fields.bodyMarkdown !== undefined)
+  )
+    names.push("bodyMarkdown");
   const displayFields = names.filter((field) =>
     hasDisplayValue(english[field]),
   );
@@ -101,7 +106,12 @@ export function createTranslationReport(
       );
     const isBase = language.strapiLocale === "en";
     const fields: FieldAudit[] = names.map((field) => {
-      const result = home.fields[field];
+      const result = home.fields[field] ?? {
+        value: null,
+        sourceLocale: null,
+        fallback: false,
+        reason: "unavailable-optional" as const,
+      };
       const baselineAvailable = displayFields.includes(field);
       const counted =
         !isBase && baselineAvailable && hasDisplayValue(result.value);

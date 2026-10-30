@@ -4,6 +4,7 @@ export type HomeContentType = "personal-home" | "b2b-home";
 export interface HomeContent {
   headline: string;
   description: string | null;
+  bodyMarkdown?: string | null;
 }
 
 export type HomeResult =

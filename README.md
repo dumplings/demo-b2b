@@ -50,3 +50,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 Static generation now reads the CMS language manifest and localized home content. Provide private CMS_URL and CMS_READ_API_TOKEN through the build environment; Strapi must be online during generation. Generated pages work offline from the CMS. The pages use minimal semantic HTML, with English fallback and a static translation report, without production UI. See [fallback rules and reporting](docs/english-fallback.md).
 
 See [CMS data layer](docs/cms-data-layer.md) and [language manifest and SSG](docs/language-manifest.md) for interfaces, validation, base handling and tests.
+
+## Markdown pipeline
+
+B-03-05/06 adds minimal, build-time Markdown content. See [the Markdown ADR](docs/adr/0001-cms-markdown.md). No production UI or publishing workflow is included.

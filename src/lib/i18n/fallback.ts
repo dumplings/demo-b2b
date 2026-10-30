@@ -1,7 +1,7 @@
 import { CmsError } from "../cms/types.ts";
 import type { HomeContent, HomeResult } from "../cms/types.ts";
 
-export type HomeField = "headline" | "description";
+export type HomeField = "headline" | "description" | "bodyMarkdown";
 export type FallbackReason =
   "missing-field" | "missing-entry" | "unavailable-optional" | null;
 
@@ -21,10 +21,13 @@ export interface ResolvedHome {
   fields: {
     headline: LocalizedField<string>;
     description: LocalizedField;
+    bodyMarkdown?: LocalizedField;
   };
 }
 
-export function hasDisplayValue(value: string | null): value is string {
+export function hasDisplayValue(
+  value: string | null | undefined,
+): value is string {
   return typeof value === "string" && value.trim() !== "";
 }
 
@@ -36,6 +39,16 @@ function assertContentTypes(content: HomeContent): void {
     typeof content.headline !== "string"
   ) {
     throw new CmsError("invalid-response", "Invalid homepage headline type.");
+  }
+  if (
+    content.bodyMarkdown !== undefined &&
+    content.bodyMarkdown !== null &&
+    typeof content.bodyMarkdown !== "string"
+  ) {
+    throw new CmsError(
+      "invalid-response",
+      "Invalid homepage bodyMarkdown type.",
+    );
   }
   if (content.description !== null && typeof content.description !== "string") {
     throw new CmsError(
@@ -128,6 +141,16 @@ export function resolveHome(
     );
   const fields = {
     headline: { ...headline, value: headline.value },
+    ...(english.bodyMarkdown !== undefined || local?.bodyMarkdown !== undefined
+      ? {
+          bodyMarkdown: resolveField(
+            english.bodyMarkdown ?? null,
+            local?.bodyMarkdown ?? null,
+            targetLocale,
+            entryMissing,
+          ),
+        }
+      : {}),
     description: resolveField(
       english.description,
       local?.description ?? null,

@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { renderMarkdown } from "../../lib/markdown/render.ts";
 import { loadHomeBuildData } from "../../lib/i18n/build.ts";
 import type { HomePageProps } from "../../lib/i18n/build.ts";
 import { languageHref } from "../../lib/i18n/urls.ts";
@@ -10,6 +11,8 @@ export const getStaticPaths = (async () => {
 
 type Props = HomePageProps;
 const { manifest, language, content, translation } = Astro.props;
+const body = content.bodyMarkdown;
+const bodyHtml = body?.value ? renderMarkdown(body.value) : null;
 ---
 
 <!doctype html>
@@ -62,6 +65,16 @@ const { manifest, language, content, translation } = Astro.props;
         >
           {content.description.value}
         </p>
+      )}
+      {bodyHtml !== null && body && (
+        <section
+          id="body-markdown"
+          lang={body.sourceLocale ?? language.strapiLocale}
+          data-source-locale={body.sourceLocale}
+          data-fallback={String(body.fallback)}
+          data-fallback-reason={body.reason ?? undefined}
+          set:html={bodyHtml}
+        />
       )}
       <dl>
         <dt>Site</dt>

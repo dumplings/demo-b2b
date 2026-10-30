@@ -41,7 +41,20 @@ export function parseHomeResponse(
   if (data.description !== null && typeof data.description !== "string") {
     invalid("data.description");
   }
-  return { headline: data.headline, description: data.description };
+  if (
+    data.bodyMarkdown !== undefined &&
+    data.bodyMarkdown !== null &&
+    typeof data.bodyMarkdown !== "string"
+  ) {
+    invalid("data.bodyMarkdown");
+  }
+  return {
+    headline: data.headline,
+    description: data.description,
+    ...(data.bodyMarkdown === undefined
+      ? {}
+      : { bodyMarkdown: data.bodyMarkdown as string | null }),
+  };
 }
 
 export function parseSiteLocale(
