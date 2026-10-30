@@ -54,3 +54,7 @@ See [CMS data layer](docs/cms-data-layer.md) and [language manifest and SSG](doc
 ## Markdown pipeline
 
 B-03-05/06 adds minimal, build-time Markdown content. See [the Markdown ADR](docs/adr/0001-cms-markdown.md). No production UI or publishing workflow is included.
+
+## B-04-01 local Pages preparation
+
+See [Pages preparation and rollback](docs/pages-release.md) for the current deployment policy, checked static package, commands, and B-04-02 publishing boundary. CMS siteId is unchanged.
