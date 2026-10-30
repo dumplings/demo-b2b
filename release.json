@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "repository": "dumplings/demo-b2b",
+  "site": "https://dumplings.github.io",
+  "base": "/demo-b2b/",
+  "indexing": "noindex",
+  "pages": [
+    {
+      "path": "/demo-b2b/",
+      "locale": "en",
+      "direction": "ltr",
+      "canonical": "https://dumplings.github.io/demo-b2b/en/",
+      "alternates": [],
+      "indexable": false
+    },
+    {
+      "path": "/demo-b2b/en/",
+      "locale": "en",
+      "direction": "ltr",
+      "canonical": "https://dumplings.github.io/demo-b2b/en/",
+      "alternates": [
+        {
+          "locale": "en",
+          "href": "https://dumplings.github.io/demo-b2b/en/"
+        },
+        {
+          "locale": "ar",
+          "href": "https://dumplings.github.io/demo-b2b/ar/"
+        },
+        {
+          "locale": "de",
+          "href": "https://dumplings.github.io/demo-b2b/de/"
+        },
+        {
+          "locale": "fr",
+          "href": "https://dumplings.github.io/demo-b2b/fr/"
+        },
+        {
+          "locale": "zh-CN",
+          "href": "https://dumplings.github.io/demo-b2b/zh/"
+        }
+      ],
+      "indexable": false
+    },
+    {
+      "path": "/demo-b2b/ar/",
+      "locale": "ar",
+      "direction": "rtl",
+      "canonical": "https://dumplings.github.io/demo-b2b/ar/",
+      "alternates": [
+        {
+          "locale": "en",
+          "href": "https://dumplings.github.io/demo-b2b/en/"
+        },
+        {
+          "locale": "ar",
+          "href": "https://dumplings.github.io/demo-b2b/ar/"
+        },
+        {
+          "locale": "de",
+          "href": "https://dumplings.github.io/demo-b2b/de/"
+        },
+        {
+          "locale": "fr",
+          "href": "https://dumplings.github.io/demo-b2b/fr/"
+        },
+        {
+          "locale": "zh-CN",
+          "href": "https://dumplings.github.io/demo-b2b/zh/"
+        }
+      ],
+      "indexable": false
+    },
+    {
+      "path": "/demo-b2b/de/",
+      "locale": "de",
+      "direction": "ltr",
+      "canonical": "https://dumplings.github.io/demo-b2b/de/",
+      "alternates": [
+        {
+          "locale": "en",
+          "href": "https://dumplings.github.io/demo-b2b/en/"
+        },
+        {
+          "locale": "ar",
+          "href": "https://dumplings.github.io/demo-b2b/ar/"
+        },
+        {
+          "locale": "de",
+          "href": "https://dumplings.github.io/demo-b2b/de/"
+        },
+        {
+          "locale": "fr",
+          "href": "https://dumplings.github.io/demo-b2b/fr/"
+        },
+        {
+          "locale": "zh-CN",
+          "href": "https://dumplings.github.io/demo-b2b/zh/"
+        }
+      ],
+      "indexable": false
+    },
+    {
+      "path": "/demo-b2b/fr/",
+      "locale": "fr",
+      "direction": "ltr",
+      "canonical": "https://dumplings.github.io/demo-b2b/fr/",
+      "alternates": [
+        {
+          "locale": "en",
+          "href": "https://dumplings.github.io/demo-b2b/en/"
+        },
+        {
+          "locale": "ar",
+          "href": "https://dumplings.github.io/demo-b2b/ar/"
+        },
+        {
+          "locale": "de",
+          "href": "https://dumplings.github.io/demo-b2b/de/"
+        },
+        {
+          "locale": "fr",
+          "href": "https://dumplings.github.io/demo-b2b/fr/"
+        },
+        {
+          "locale": "zh-CN",
+          "href": "https://dumplings.github.io/demo-b2b/zh/"
+        }
+      ],
+      "indexable": false
+    },
+    {
+      "path": "/demo-b2b/zh/",
+      "locale": "zh-CN",
+      "direction": "ltr",
+      "canonical": "https://dumplings.github.io/demo-b2b/zh/",
+      "alternates": [
+        {
+          "locale": "en",
+          "href": "https://dumplings.github.io/demo-b2b/en/"
+        },
+        {
+          "locale": "ar",
+          "href": "https://dumplings.github.io/demo-b2b/ar/"
+        },
+        {
+          "locale": "de",
+          "href": "https://dumplings.github.io/demo-b2b/de/"
+        },
+        {
+          "locale": "fr",
+          "href": "https://dumplings.github.io/demo-b2b/fr/"
+        },
+        {
+          "locale": "zh-CN",
+          "href": "https://dumplings.github.io/demo-b2b/zh/"
+        }
+      ],
+      "indexable": false
+    }
+  ],
+  "sourceCommit": "42d73c54ad9e5ab0769415bf0d4aaa36a24ee902",
+  "sourceClean": true,
+  "sourceBranch": "main",
+  "builtAt": "2026-10-30T05:40:01.483Z",
+  "artifactHash": "df90f6e90b3c1e65dbbd3c81a9025884ebd68f0bc77b9ff6ef56f4fd7bddadd3"
+}
